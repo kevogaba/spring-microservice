@@ -12,7 +12,6 @@ spring:
           predicates:
             - Path=/users/**
           filters:
-            - name: CircuitBreaker
               args:
                 name: USER-SERVICE
                 fallbackuri: forward:/userServiceFallBack
@@ -21,7 +20,6 @@ spring:
           predicates:
             - Path=/departments/**
           filters:
-            - name: CircuitBreaker
               args:
                 name: DEPARTMENT-SERVICE
                 fallbackuri: forward:/departmentServiceFallBack
