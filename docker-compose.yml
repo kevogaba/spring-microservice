@@ -1,0 +1,52 @@
+version: "3"
+
+networks:
+  service-net:
+    driver: bridge
+
+services:
+
+  cloud-gateway:
+    image: "cloud-gateway"
+    networks:
+      - service-net
+    ports:
+      - "9191:9191"
+
+
+  user-service:
+    image: "user-service"
+    networks:
+      - service-net
+    ports:
+      - "9002:9002"
+
+
+  department-service:
+    image: "department-service"
+    networks:
+      - service-net
+    ports:
+      - "9001:9001"
+
+
+  hystrix-dashboard:
+    image: "hystrix-dashboard"
+    networks:
+      - service-net
+    ports:
+      - "9295:9295"
+
+
+  service-registry:
+    image: "service-registry"
+    networks:
+      - service-net
+    ports:
+      - "8761:8761"
+    depends_on:
+      - department-service
+      - user-service
+      - hystrix-dashboard
+      - cloud-gateway
+
