@@ -82,7 +82,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set up Java for Docker Images
-        uses: actions/setup@v2
+        uses: actions/setup-java@v2
         with:
           java-version: '11'
           distribution: 'adopt'
