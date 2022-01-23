@@ -46,4 +46,6 @@ jobs:
     steps: 
     - uses: actions/checkout@v2
     - name: Build and run docker images
-      run: docker compose up -d --build
+      run: docker compose up
+    - name: Stop the images
+      run: docker compose down
