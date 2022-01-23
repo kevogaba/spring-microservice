@@ -8,6 +8,10 @@
     <artifactId>spring-microservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <properties>
+         <sonar.organization>kevogaba</sonar.organization>
+         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
     <modules>
         <module>service-registry</module>
         <module>cloud-gateway</module>
