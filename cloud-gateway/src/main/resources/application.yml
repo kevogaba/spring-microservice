@@ -32,6 +32,7 @@ hystrix:
           thread:
             timeoutInMilliseconds: 4000
 
+
 management:
   endpoints:
     web:
@@ -45,4 +46,4 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    hostname: localhost
+    preferIpAddress: true

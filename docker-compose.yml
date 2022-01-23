@@ -5,48 +5,79 @@ networks:
     driver: bridge
 
 services:
+  service-registry:
+    hostname: eureka
+    container_name: service-registry
+    build:
+      context: service-registry
+      dockerfile: Dockerfile
+    image: "service-registry:latest"
+    networks:
+      - service-net
+    ports:
+      - "8761:8761"
+
 
   cloud-gateway:
-    image: "cloud-gateway"
+    container_name: cloud-gateway
+    build:
+      context: cloud-gateway
+      dockerfile: Dockerfile
+    image: "cloud-gateway:latest"
     networks:
       - service-net
     ports:
       - "9191:9191"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka:8761/eureka/
+    links:
+      - service-registry
 
 
   user-service:
-    image: "user-service"
+    container_name: user-service
+    build:
+      context: user-service
+      dockerfile: Dockerfile
+    image: "user-service:latest"
     networks:
       - service-net
     ports:
       - "9002:9002"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka:8761/eureka/
+    links:
+      - service-registry
 
 
   department-service:
-    image: "department-service"
+    container_name: department-service
+    build:
+      context: department-service
+      dockerfile: Dockerfile
+    image: "department-service:latest"
     networks:
       - service-net
     ports:
       - "9001:9001"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka:8761/eureka/
+    links:
+      - service-registry
 
 
   hystrix-dashboard:
+    container_name: hystrix-dashboard
+    build:
+      context: hystrix-dashboard
+      dockerfile: Dockerfile
     image: "hystrix-dashboard"
     networks:
       - service-net
     ports:
       - "9295:9295"
-
-
-  service-registry:
-    image: "service-registry"
-    networks:
-      - service-net
-    ports:
-      - "8761:8761"
-    depends_on:
-      - department-service
-      - user-service
-      - hystrix-dashboard
-      - cloud-gateway
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka:8761/eureka/
+    links:
+      - service-registry
 

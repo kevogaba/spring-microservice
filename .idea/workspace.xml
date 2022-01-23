@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab23c504-35e5-4bcb-a57f-160f66fae635" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloud-gateway/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/department-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hystrix-dashboard/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-registry/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-gateway/src/main/java/com/kevogaba/cloud/gateway/FallBackMethodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-gateway/src/main/java/com/kevogaba/cloud/gateway/FallBackMethodController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/department-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/department-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hystrix-dashboard/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/hystrix-dashboard/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-registry/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-registry/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +56,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="23kN68VfhsfyBnfC7K3849etEpA" />
   <component name="ProjectLevelVcsManager">
@@ -75,15 +72,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../car-Location-microservice" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
-    <configuration name="DepartmentServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.kevogaba.department.DepartmentServiceApplication" />
-      <module name="department-service" />
+    <configuration name="HystrixDashboardApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.kevogaba.hystrix.dashboard.HystrixDashboardApplication" />
+      <module name="hystrix-dashboard" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.kevogaba.department.*" />
+          <option name="PATTERN" value="com.kevogaba.hystrix.dashboard.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,10 +110,41 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="user-service/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
+    <configuration name="docker-compose.yml.department-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
         <settings>
-          <option name="sourceFilePath" value="user-service/Dockerfile" />
+          <option name="services">
+            <list>
+              <option value="department-service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.service-registry: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="service-registry" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.user-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="user-service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
         </settings>
       </deployment>
       <method v="2" />
@@ -121,8 +152,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.user-service/Dockerfile" />
-        <item itemvalue="Application.DepartmentServiceApplication" />
+        <item itemvalue="Docker.docker-compose.yml.department-service: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.user-service: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.service-registry: Compose Deployment" />
+        <item itemvalue="Application.HystrixDashboardApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -142,7 +175,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
