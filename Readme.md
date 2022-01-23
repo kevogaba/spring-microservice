@@ -24,8 +24,13 @@ Technologies
 - `Spring MVC`, for creating RESTful API
 - `Docker`, for containerization of services
 - `Docker-Compose`, to link the containers
--  ** `Zipkin and Sleuth`, to trace the services and requests
--  ** `Hystrix`, used in determining service status
+- `Github Actions`, for CI/CD tasks and tests:
+    - `test`: to test maven packaging
+    - `sonar`: to perform code quality check
+    - `artifact`: to publish(deploy) artifact in GitHub Packages
+    - `docker`: to create docker images using docker-compose
+- ** `Zipkin and Sleuth`, to trace the services and requests
+- ** `Hystrix`, used in determining service status
 
 
 ### How to launch
@@ -49,3 +54,5 @@ Default configure zipkin and sleuth on your environment, dependencies already ad
 Implement `cloud-config` where you save all your common configuration in a git repository.
 
 Only implemented create and read functionalities, add update and delete functions.
+
+On GitHub actions publish the images to DockerHub.

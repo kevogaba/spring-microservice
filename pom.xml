@@ -15,4 +15,13 @@
         <module>department-service</module>
         <module>user-service</module>
     </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/kevogaba/spring-microservice</url>
+        </repository>
+    </distributionManagement>
+
 </project>
